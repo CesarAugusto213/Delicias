@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".LoginActivity">
+    tools:context=".CreateAccountActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,20 +16,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.6" />
+            android:layout_weight="0.84" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="22dp"
-            android:layout_weight="0.4"
+            android:layout_weight="0.16"
             android:background="@drawable/area_background"
             android:orientation="vertical"
-            android:padding="25dp">
+            android:paddingTop="20dp"
+            android:paddingHorizontal="25dp">
 
             <EditText
-                android:id="@+id/mailLogin"
+                android:id="@+id/mailCreateAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -39,7 +40,27 @@
                 android:textSize="10sp" />
 
             <EditText
-                android:id="@+id/passwordLogin"
+                android:id="@+id/nameCreateAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/box_text"
+                android:hint="Ingresar Nombre"
+                android:padding="16dp"
+                android:textSize="10sp" />
+
+            <EditText
+                android:id="@+id/userCreateAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/box_text"
+                android:hint="Ingresar Usuario"
+                android:padding="16dp"
+                android:textSize="10sp" />
+
+            <EditText
+                android:id="@+id/passwordCreateAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -49,35 +70,46 @@
                 android:padding="16dp"
                 android:textSize="10sp" />
 
+            <EditText
+                android:id="@+id/confirmCreateAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/box_text"
+                android:hint="Confirmar Contraseña"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:textSize="10sp" />
+
             <Button
-                android:id="@+id/login"
+                android:id="@+id/registrarAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_rounded"
-                android:text="Ingresar"
+                android:text="Registrar"
                 android:textSize="10sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingTop="40dp">
+                android:paddingTop="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
-                    android:text="¿No tienes cuenta aún?"
+                    android:text="¿Tienes cuenta?"
                     android:textColor="@color/black"
                     android:textSize="10sp" />
 
                 <TextView
-                    android:id="@+id/createAccount"
+                    android:id="@+id/returnToLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
-                    android:text="Registrate aquí"
-                    android:onClick="goCreateAccount"
+                    android:text="Regresar"
+                    android:onClick="goLogin"
                     android:textColor="@color/teal_700"
                     android:textSize="10sp" />
 
