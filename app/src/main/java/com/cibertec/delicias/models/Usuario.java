@@ -8,6 +8,13 @@ public class Usuario {
     private String user;
     private String pass;
 
+    public Usuario(String mail, String name, String user, String pass) {
+        this.mail = mail;
+        this.name = name;
+        this.user = user;
+        this.pass = pass;
+    }
+
     public Usuario(int id, String mail, String name, String user, String pass) {
         this.id = id;
         this.mail = mail;
