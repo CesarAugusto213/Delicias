@@ -1,4 +1,4 @@
-package com.cibertec.delicias;
+package com.cibertec.delicias.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.cibertec.delicias.ContainerActivity;
+import com.cibertec.delicias.R;
 import com.cibertec.delicias.dao.UsuarioDAO;
 import com.cibertec.delicias.models.Usuario;
 
