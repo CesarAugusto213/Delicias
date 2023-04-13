@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class ProductoDAO {
     ConexionSQLite con;
     SQLiteDatabase db;
+    Producto producto;
     ArrayList<Producto> listProd = new ArrayList<>();
     Context context;
     ContentValues content;
@@ -57,12 +58,18 @@ public class ProductoDAO {
         return listProd;
     }
 
-    public boolean findProd(int position) {
+    public Producto findProd(int id) {
         db = con.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from producto where id = ?", new String[]{String.valueOf(position)});
-        boolean result =  (cursor != null && cursor.getCount() > 0);
+        Cursor cursor = db.rawQuery("select * from producto where id = ?", new String[]{String.valueOf(id)});
+        if(cursor != null && cursor.getCount() > 0);{
+            cursor.moveToFirst();
+            producto = new Producto(cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3));
+        }
         db.close();
-        return result;
+        return producto;
     }
 
     public boolean delete(int id) {

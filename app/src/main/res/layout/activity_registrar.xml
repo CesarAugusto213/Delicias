@@ -16,14 +16,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.75" />
+            android:layout_weight="0.65" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="22dp"
-            android:layout_weight="0.25"
+            android:layout_weight="0.35"
             android:background="@drawable/area_background"
             android:orientation="vertical"
             android:paddingHorizontal="25dp"
