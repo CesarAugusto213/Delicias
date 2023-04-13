@@ -19,6 +19,7 @@ import com.cibertec.delicias.models.Producto;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ContainerActivity extends AppCompatActivity {
 
@@ -81,8 +82,11 @@ public class ContainerActivity extends AppCompatActivity {
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                boolean value = productoDAO.delete(viewHolder.getAdapterPosition());
-                adapterView.deleteItem(viewHolder.getAdapterPosition());
+                Producto producto = productos.get(viewHolder.getAdapterPosition());
+                boolean value = productoDAO.delete(producto.getId());
+                productos.remove(viewHolder.getAdapterPosition());
+                adapterView.notifyItemRemoved(viewHolder.getAdapterPosition());
+
                 if (value == false) {
                     Toast.makeText(ContainerActivity.this, "No se pudo eliminar el producto", Toast.LENGTH_LONG).show();
                 }

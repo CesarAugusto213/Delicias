@@ -75,7 +75,6 @@ public class ProductoDAO {
     public boolean delete(int id) {
         db = con.getWritableDatabase();
         boolean result = (db.delete("producto", "id = " + id, null)) > 0;
-        db.close();
         return result;
     }
 
