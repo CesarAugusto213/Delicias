@@ -16,7 +16,6 @@ import com.cibertec.delicias.models.Usuario;
 
 public class LoginActivity extends AppCompatActivity {
     UsuarioDAO dao;
-    Usuario usuario;
     EditText mail, pass;
     Button login;
 

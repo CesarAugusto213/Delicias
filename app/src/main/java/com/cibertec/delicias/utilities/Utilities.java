@@ -12,4 +12,11 @@ public class Utilities {
             "user text," +
             "pass text)";
 
+    //Producto
+    public static final String TB_PRODUCTO = "create table if not exists producto(" +
+            "id integer primary key autoincrement," +
+            "url text," +
+            "cost text," +
+            "title text)";
+
 }

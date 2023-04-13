@@ -15,9 +15,9 @@ import java.util.ArrayList;
 
 public class UsuarioDAO {
     ConexionSQLite con;
-    SQLiteDatabase db;
+    SQLiteDatabase db;/*
     ArrayList<Usuario> listUser = new ArrayList<>();
-    Usuario usuario;
+    Usuario usuario;*/
     Context context;
     ContentValues content;
 
@@ -29,15 +29,19 @@ public class UsuarioDAO {
     public boolean insertUser(Usuario usuario) {
         ContentValues content = createOrEdit(usuario);
         db = con.getWritableDatabase();
-        return (db.insert("usuario", null, content)) > 0;
+        boolean result = (db.insert("usuario", null, content)) > 0;
+        db.close();
+        return result;
     }
 
     public boolean editUser(Usuario usuario) {
         ContentValues content = createOrEdit(usuario);
         db = con.getWritableDatabase();
-        return (db.update("usuario", content, "id = " + usuario.getId(), null)) > 0;
+        boolean result = (db.update("usuario", content, "id = " + usuario.getId(), null)) > 0;
+        db.close();
+        return result;
     }
-
+    /*
     public ArrayList<Usuario> listUser() {
         listUser.clear();
         db = con.getReadableDatabase();
@@ -55,19 +59,20 @@ public class UsuarioDAO {
 
         return listUser;
     }
-
+    */
     public boolean findUser(String mail, String pass) {
         db = con.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from usuario where mail = ? and pass = ?", new String[]{mail, pass});
-
-        return (cursor != null && cursor.getCount() > 0);
+        boolean result = (cursor != null && cursor.getCount() > 0);
+        db.close();
+        return result;
     }
-
+    /*
     public boolean delete(int id) {
         db = con.getWritableDatabase();
         return (db.delete("usuario", "id = " + id, null)) > 0;
     }
-
+    */
     public ContentValues createOrEdit(@NonNull Usuario usuario) {
         content = new ContentValues();
         content.put("mail", usuario.getMail());

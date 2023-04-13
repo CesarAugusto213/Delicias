@@ -33,10 +33,9 @@ public class PictureAdapterRecyclerView extends RecyclerView.Adapter<ViewHolder>
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         holder.onBind(position);
     }
-
 
     @Override
     public int getItemCount() {
@@ -61,7 +60,7 @@ public class PictureAdapterRecyclerView extends RecyclerView.Adapter<ViewHolder>
         TextView title;
         TextView cost;
 
-        public ViewHolderChild(@NonNull View itemView) {
+        public ViewHolderChild(View itemView) {
             super(itemView);
 
             img = itemView.findViewById(R.id.imgCard);
