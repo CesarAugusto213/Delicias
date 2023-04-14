@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.cibertec.delicias">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -43,6 +44,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDj1g1y9bXTd29ZpljOF7mdkFYc6hKNKZY" />
     </application>
 
 </manifest>
